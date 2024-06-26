@@ -1,0 +1,39 @@
+---
+import Taskbar from '../components/taskbar.astro';
+import DateTime from '../components/date_time.astro';
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiegOS</title>
+    <link rel="icon" href="../components/Images/DiegOS.jpg">
+    </head>
+    <body>
+    <main>
+		<Taskbar />
+        <DateTime/>
+        <slot />
+    </main>
+        </body>
+</html>
+
+<style is:global>
+
+html {
+    background-image: url(../images/DiegOS.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    margin: 0;
+}
+
+</style>
